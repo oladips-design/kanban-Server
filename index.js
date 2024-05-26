@@ -28,6 +28,10 @@ app.use(express.json());
 app.get("/api", (req, res) => {
   res.json(tasks);
 });
+app.get("/", (req, res) => {
+  console.log("Welcome");
+  res.send("Home");
+});
 
 socketIO.on("connection", (socket) => {
   console.log(`⚡: ${socket.id} user just connected!`);
